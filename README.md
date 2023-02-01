@@ -97,7 +97,7 @@ Use the 'nodemon fileNameLoader.js' command to start the '8088' port in the same
     </tr>
 </table>
 
-
+实际上，本项目的原理是通过 `nodejs` 查看文件目录，并根据文件目录向前端返回图片或视频的名称，前端实现相关图片的展示
 
 ## 隐藏文件
 ### 隐藏文件的使用
