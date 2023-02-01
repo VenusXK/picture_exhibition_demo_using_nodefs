@@ -39,14 +39,68 @@ Use the 'nodemon fileNameLoader.js' command to start the '8088' port in the same
     </tr>
 </table>
 
-## 环境依赖
->    "axios": "^1.2.5",\
-    "express": "^4.18.2",\
-    "fs": "^0.0.1-security",\
-    "nodemon": "^2.0.20",\
-    "path": "^0.12.7"
+## 文件如何存储
+`html` 中文件树结构与文件资源管理器文件树结构是同步的
 
-## 安排隐藏文件
+<table align=center>
+    <tr>
+<td>
+<div align=center>
+<img decoding="async" src="./readme_file/classification.jpg" height="120px" >
+</div>
+</td>
+<td>
+<div align=center>
+<img decoding="async" src="./readme_file/material_index.jpg" height="120px"border-radius="3px" >
+</div>
+</td>
+    </tr>
+    <tr>
+<td>
+<div align=center>
+文件资源管理器中文件目录
+</div>
+</td>
+<td>
+<div align=center>
+显示目录
+</div>
+</td>
+    </tr>
+</table>
+
+<table align=center>
+    <tr>
+<td>
+<div align=center>
+<img decoding="async" src="./readme_file/classification2.jpg" height="120px"border-radius="3px" >
+</div>
+</td>
+<td>
+<div align=center>
+<img decoding="async" src="./readme_file/gnsj.jpg" height="120px" >
+</div>
+</td>
+    </tr>
+    <tr>
+</td>
+<td>
+<div align=center>
+文件资源管理器中文件目录
+</div>
+</td>
+<td>
+<div align=center>
+显示目录
+</div>
+</td>
+    </tr>
+</table>
+
+
+
+## 隐藏文件
+### 隐藏文件的使用
 
 <table align=center>
     <tr>
@@ -88,3 +142,26 @@ Use the 'nodemon fileNameLoader.js' command to start the '8088' port in the same
 </td>
     </tr>
 </table>
+
+### 隐藏文件的位置 
+`.\source_file\config\config_files\ext\ext\ext`
+
+该文件目录与显示的目录相同
+
+### 修改隐藏文件的密码
+<div align=center>
+<img decoding="async" src="./readme_file/change_code.jpg" height="200px"border-radius="3px" >
+</div>
+
+>**说明：** 修改 `0000` 为想要设置的密码\
+注意这里的密码为弱加密，查阅源代码就会破解密码\
+可以加入其他 `js` 交互要求才能进入隐藏文件夹\
+或通过 `express` 向数据库中查询以检验密码进入隐藏文件夹
+
+## 环境依赖
+>    "axios": "^1.2.5",\
+    "express": "^4.18.2",\
+    "fs": "^0.0.1-security",\
+    "nodemon": "^2.0.20",\
+    "path": "^0.12.7"
+
