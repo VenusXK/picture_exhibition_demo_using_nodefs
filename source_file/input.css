@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, .special-body{
+    @apply m-0 bg-black font-bold overflow-x-hidden
+}
+.bg-video{
+    @apply  w-full h-full fixed left-0;
+    z-index: -1;
+}
+
+.lock{
+    @apply hover:cursor-pointer hover:text-white animate-pulse hover:animate-none w-8 h-8 text-gray-500 absolute left-44 top-5;
+}
+.back-svg{
+    @apply w-8 h-8 text-gray-400 ml-1 mt-2 absolute top-3 left-40;
+}
+.title, .subtitle{
+    @apply w-screen h-auto p-2 pt-4 text-white text-3xl font-bold;
+}
+.subtitle{
+    @apply  text-xl text-gray-300 hover:text-white;
+}
+.screen-line{
+    @apply h-auto w-screen flex flex-wrap;
+}
+.img-contain{
+    @apply transition ease-in-out h-28 sm:h-12 md:h-16 lg:h-24 hover:scale-110 ring-white hover:ring-4;
+}
+.img-contain img{
+    @apply h-full;
+}
+.img-contain video{
+    @apply h-full;
+}

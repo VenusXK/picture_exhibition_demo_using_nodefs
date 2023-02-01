@@ -1,0 +1,1 @@
+console.log("hahaha, I'm test_require.js");

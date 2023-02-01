@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[本地]张景赫-素材库-索引</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body>
+    <input id="sec-input" type="password" style="display: none;" class="w-40 absolute top-10 left-10 z-10 rounded-sm pl-2" placeholder="键入密钥" />
+    <button id="sec-btn" class="absolute left-52 top-10 z-10 text-white hover:ring-1 ring-white pl-2 pr-2 bg-purple-400 rounded-sm" style="display: none;">
+        确认
+    </button>
+
+    <div id="opac" class="w-screen h-screen bg-black absolute top-0 left-0 opacity-80" style="display: none;">
+    </div>
+
+
+    <div class="lock" id="try-click">
+        <svg id="locked" class="w-auto h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
+            <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" />
+        </svg>
+        <svg id="opened" class="w-auto h-auto ml-1" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 1.5c2.9 0 5.25 2.35 5.25 5.25v3.75a.75.75 0 01-1.5 0V6.75a3.75 3.75 0 10-7.5 0v3a3 3 0 013 3v6.75a3 3 0 01-3 3H3.75a3 3 0 01-3-3v-6.75a3 3 0 013-3h9v-3c0-2.9 2.35-5.25 5.25-5.25z" />
+        </svg>
+    </div>
+
+    <div class="title">
+        素材库-索引
+    </div>
+
+    <div class="subtitle" id="seqing" style="display: none;">
+        <a href="./config/config_files/ext/ext/ext/index_h.html">
+            <span class="text-gray-900">隐私-已解锁</span> 
+        </a>
+    </div>
+
+    <script src="./axios.js"></script>
+    <script src="./index.js"></script>
+
+
+</body>
+<script>
+    let try_num = 0;
+    let try_click = document.getElementById('try-click');
+    let opac = document.getElementById('opac');
+    let sec_input = document.getElementById('sec-input');
+    let sec_btn = document.getElementById('sec-btn');
+    let locked = document.getElementById('locked');
+    let opened = document.getElementById('opened');
+    let seqing = document.getElementById('seqing');
+
+    try_click.onclick = function(){
+        try_num++;
+        console.log(try_num)
+    }
+
+    locked.onclick = function(){
+        opac.style.display = "";
+        sec_input.style.display = "";
+        sec_btn.style.display = "";
+    }
+
+    function success(){
+        opac.style.display = "none";
+        sec_input.style.display = "none";
+        sec_btn.style.display = "none";
+        locked.style.display = "none"
+        opened.style.display = "";
+        seqing.style.display="";
+    }
+
+    function judge(){
+        if(sec_input.value == "0000"){
+            success();
+        }
+        else{
+            sec_input.value = "";
+            sec_input.placeholder = "密钥错误"
+        }
+    }
+
+    sec_input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            judge();
+        }
+    });
+
+    sec_btn.onclick = function(){
+        judge();
+    }
+
+    if(try_num > 5){
+        locked.style.display = "";
+    }
+    else{
+        // locked.style.display = "none";
+    }
+
+    
+</script>
+</html>
